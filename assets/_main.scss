@@ -5,6 +5,7 @@ html {
 }
 
 body {
+  padding-top: $nav-bar;
   min-width: $body-min-width;
   color: var(--body-font-color);
   background: var(--body-background);
@@ -43,6 +44,7 @@ img {
 }
 
 aside nav ul {
+    padding-top: 10em;
   padding: 0;
   margin: 0;
   list-style: none;
@@ -81,6 +83,63 @@ ul.pagination {
   margin: 0 auto;
 }
 
+.navigation-bar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: $nav-bar / 1.5;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  z-index: 10000;
+  // border: 1px solid #e7e7e7;
+  background-color: whitesmoke;
+  img {
+    width: $nav-bar / 1.5;
+    height: $nav-bar / 1.5;
+  }
+  li {
+    float: left;
+    .title {
+      color: gray;
+    }
+    .notcurrent {
+      background-color: whitesmoke;
+      color: gray;
+    }
+    .current {
+      color: #000000;
+    }
+  }
+  button {
+    font-family: 'Noto Sans Symbols 2', serif;
+    background-color: whitesmoke;
+    color: #ffffff;
+    float: right;
+    border: 0px;
+    outline: none;
+    padding-top: $nav-bar / 13;
+    padding-left: $padding-16 / 2;
+    padding-right: $padding-16 / 2;
+    height: $nav-bar / 1.5;
+    text-decoration: none;
+    transition-duration: 0.3s;
+  }
+  button:hover {
+    background-color: #a1d5fb;
+    color: #000000;
+  }
+  a {
+    display: block;
+    padding-top: $nav-bar / 6.5;
+    padding-left: $padding-16 / 2;
+    padding-right: $padding-16 / 2;
+    height: $nav-bar / 1.5;
+    text-decoration: none;
+  }
+}
+
 .book-icon {
   filter: var(--icon-filter);
 }
@@ -102,7 +161,6 @@ ul.pagination {
 
   .book-menu-content {
     width: $menu-width;
-    padding: $padding-16;
     background: var(--body-background);
 
     @include fixed;
@@ -232,7 +290,6 @@ body[dir="rtl"] .book-menu {
 
   .book-toc-content {
     width: $toc-width;
-    padding: $padding-16;
 
     @include fixed;
   }
@@ -308,6 +365,9 @@ body[dir="rtl"] .book-menu {
     display: block;
   }
 
+  .navigation-bar li .title {
+      display: none;
+  }
   #menu-control:focus ~ main label[for="menu-control"] {
     @include outline;
   }
@@ -355,10 +415,15 @@ body[dir="rtl"] .book-menu {
 }
 
 // Extra space for big screens
-@media screen and (min-width: $container-max-width) {
-  .book-page,
-  .book-menu .book-menu-content,
-  .book-toc .book-toc-content {
-    padding: $padding-16 * 2 $padding-16;
-  }
+// @media screen and (min-width: $container-max-width) {
+//   .book-page,
+//   .book-menu .book-menu-content,
+//   .book-toc .book-toc-content {
+//     padding: $nav-bar $padding-16;
+//   }
+// }
+
+.book-menu .book-menu-content,
+.book-toc .book-toc-content {
+  padding: $nav-bar $padding-16;
 }

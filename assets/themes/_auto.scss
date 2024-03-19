@@ -2,8 +2,16 @@
   @include theme-light;
 }
 
+:root .dark-mode {
+  @include theme-dark;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     @include theme-dark;
+  }
+
+  :root .dark-mode {
+    @include theme-light;
   }
 }

@@ -33,8 +33,16 @@
        url('fonts/SourceHanSerif/SourceHanSerifSC-Regular.otf') format('opentype');
 }
 
+@font-face {
+  font-family: 'EB Garamond';
+  font-style: italic;
+  font-display: swap;
+  src: local(''),
+       url('fonts/EBGaramond/EBGaramond-Italic-VariableFont_wght.ttf') format('truetype');
+}
+
 body {
-  font-family: 'EB Garamond', 'Source Han Serif SC', serif;
+  font-family: 'EB Garamond', 'Source Han Serif SC', 'Noto Sans Symbols 2', serif;
   font-variant-ligatures: common-ligatures;
   font-feature-settings: 'liga';
 }
@@ -42,3 +50,5 @@ body {
 code {
   font-family: 'Roboto Mono', monospace;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Symbols+2');

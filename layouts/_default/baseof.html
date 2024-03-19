@@ -7,6 +7,28 @@
 <body dir="{{ default "ltr" .Site.Language.LanguageDirection }}">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <div class="navigation-bar">
+    <li><a class="placeholder"></a></li>
+    <li><img src="https://oau.edu.kg/TIA_LogoBG@3x.png"></li>
+    <li><a class="title">Trans in Academia! </a></li>
+    <li><a class="placeholder"> </a></li>
+
+    <li><a href="https://oau.edu.kg" class="notcurrent">Events</a></li>
+
+    {{ $libClass := "notcurrent" }}
+    {{ $guideClass := "notcurrent" }}
+
+    {{ if eq .Site.Title "Trans in Academia! 文章资料库" }}
+        {{ $libClass = "current" }}
+    {{ else if or (eq .Site.Title "Transgender University Guidance") (eq .Site.Title "跨性别选校手册") (eq .Site.Title "跨性別選校手冊") }}
+        {{ $guideClass = "current" }}
+    {{ end }}
+    
+    <li><a href="https://lib.oau.edu.kg" class="{{ $libClass }}">Library</a></li>
+    <li><a href="https://uniguide.oau.edu.kg" class="{{ $guideClass }}">UniGuide</a></li>
+
+    <button onclick="toggle()">👁</button>
+  </div>
   <main class="container flex">
     <aside class="book-menu">
       <div class="book-menu-content">
@@ -81,3 +103,9 @@
 {{ define "toc" }}
   {{ partial "docs/toc" . }}
 {{ end }}
+
+  <script>
+    function toggle() {
+      document.body.classList.toggle("dark-mode");
+    }
+  </script>

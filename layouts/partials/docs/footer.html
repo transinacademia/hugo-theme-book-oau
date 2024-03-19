@@ -26,3 +26,18 @@
 {{ with $script.Content }}
   <script>{{ . | safeJS }}</script>
 {{ end }}
+
+<br>
+Copyright © 2023 by <a href="https://transacademic.org/">Trans in Academia!</a><br>
+
+<!-- We uses difference licenses for different sites -->
+{{ if eq .Site.Title "Transgender University Guidance" }}
+Licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
+{{ end }}
+{{ if eq .Site.Title "Trans in Academia! 文章资料库" }}
+Licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>
+{{ end }}
+
+<br>
+Designed by <a href="https://github.com/alex-shpak/hugo-book">hugo-book</a>, powered by <a
+    href="https://gohugo.io/">Hugo</a>.
