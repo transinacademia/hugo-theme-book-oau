@@ -20,12 +20,9 @@
 
     {{ if eq .Site.Title "Trans in Academia! 文章资料库" }}
         {{ $libClass = "current" }}
-    {{ else if or (eq .Site.Title "Transgender University Guidance") (eq .Site.Title "跨性别选校手册") (eq .Site.Title "跨性別選校手冊") }}
-        {{ $guideClass = "current" }}
     {{ end }}
     
     <li><a href="https://lib.transinacademia.org/" class="{{ $libClass }}">Library</a></li>
-    <li><a href="https://uniguide.transacademic.org" class="{{ $guideClass }}">UniGuide</a></li>
 
     <button onclick="toggle()">👁</button>
   </div>
